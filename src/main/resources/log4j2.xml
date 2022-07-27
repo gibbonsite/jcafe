@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<Properties>
+    <property name="LOG_FOLDER">logs</property>
+    <property name="pattern_cmd">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{5} - %m%n</property>
+    <property name="pattern_file">%d{yyyy-MM-dd HH:mm:ss} [%t] [%M] [%L] %-5level %logger{5} - %m%n</property>
+</Properties>
+<Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+        <PatternLayout pattern="${pattern_cmd}"/>
+    </Console>
+    <RollingFile name="LogFile" fileName="${LOG_FOLDER}/log-${date:yyyy_MM_dd HH.mm.ss}.log"
+                 filePattern="${LOG_FOLDER}/log-%d{yyyy_MM_dd HH.mm.ss} - %i.log" >
+        <PatternLayout pattern="${pattern_file}"/>
+        <Policies>
+            <TimeBasedTriggeringPolicy/>
+            <SizeBasedTriggeringPolicy size="100 KB" />
+        </Policies>
+    </RollingFile>
+</Appenders>
+<Loggers>
+    <Root level="info">
+        <AppenderRef ref="Console" />
+        <AppenderRef ref="LogFile"/>
+    </Root>
+</Loggers>
+</Configuration>
