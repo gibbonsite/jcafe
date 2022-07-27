@@ -49,3 +49,5 @@ Cafe. The Client makes an Order for lunch (chooses from the menu) and indicates 
 - Tests: TestNG
 - Maven
 - Git
+***
+![Database diagram](https://github.com/gibbonsite/jcafe/blob/master/jcafeDb.png)
