@@ -1,5 +1,6 @@
 # EPAM JWD final task - jcafe
 ### *Task*
+Cafe. The Client makes an Order for lunch (chooses from the menu) and indicates the time when he would like to receive the order. The system shows the price of the Order and offers to pay from the client's account or in cash upon receipt of the order. Loyal score are awarded to the client for pre-orders. If the Client places an order and does not pick it up, then loyal score decreases until client is blocked. The Client can evaluate each Order and leave feedback. The Administrator manages the menu, sets/removes bans/bonuses/score for Clients.
 ***
 ### *Guest:*
 - changes language
@@ -22,7 +23,7 @@
 - view his/her bonuses
 - changes password
 - adds cash to his/her account
-***
+
 ### *Admin:*
 - changes language
 - finds menu by section name
