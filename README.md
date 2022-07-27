@@ -1,6 +1,13 @@
 # EPAM JWD final task - jcafe
 ### *Task*
 ***
+### *Guest:*
+- changes language
+- registers
+- signs in
+- finds menu by section name
+- sorts menu by section name and price
+
 ### *Client:*
 - adds food dishes to cart
 - deletes food dishes from cart
