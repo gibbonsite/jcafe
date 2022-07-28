@@ -48,7 +48,6 @@
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link active" href="${absolutePath}/jsp/pages/home.jsp">${main}</a></li>
-                <li class="nav-item"><a class="nav-link" href="${absolutePath}/jsp/pages/contacts.jsp">${contacts}</a></li>
                 
                     <c:choose>
                         <c:when test="${user.role eq 'ADMIN'}"><%@include file="fragment/admin_header.jspf" %></c:when>

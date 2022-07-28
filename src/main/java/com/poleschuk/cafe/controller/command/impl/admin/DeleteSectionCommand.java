@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 import static com.poleschuk.cafe.controller.Parameter.*;
+import static com.poleschuk.cafe.controller.PagePath.*;
 import static java.lang.Boolean.TRUE;
 
 /**
@@ -39,6 +40,8 @@ public class DeleteSectionCommand implements Command {
         try {
             long sectionId = Long.parseLong(request.getParameter(PRODUCT_SECTION));
             service.deleteSectionById(sectionId);
+            router.setPage(SECTION_REMOVED_PAGE);
+            router.setRedirect();
             List<Section> listSection = service.findAllSections();
             context.setAttribute(SECTION_LIST, listSection);
         } catch (ServiceException | NumberFormatException e) {

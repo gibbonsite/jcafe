@@ -18,6 +18,7 @@ import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 import static com.poleschuk.cafe.controller.Parameter.*;
+import static com.poleschuk.cafe.controller.PagePath.*;
 import static java.lang.Boolean.TRUE;
 
 
@@ -53,6 +54,7 @@ public class InsertNewSectionCommand implements Command {
                 context.setAttribute(SECTION_LIST, sectionList);
             }
 
+            router.setPage(SECTION_ADDED_PAGE);
             router.setRedirect();
         } catch (ServiceException e) {
             throw new CommandException("Exception in a InsertNewSectionCommand class. ", e);

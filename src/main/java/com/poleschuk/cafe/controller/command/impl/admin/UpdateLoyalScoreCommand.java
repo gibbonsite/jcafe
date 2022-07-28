@@ -17,6 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 import static com.poleschuk.cafe.controller.CommandPath.FIND_CANCELLED_ORDERS_URL;
+import static com.poleschuk.cafe.controller.PagePath.*;
 
 import static com.poleschuk.cafe.controller.Parameter.*;
 import static java.lang.Boolean.TRUE;
@@ -31,7 +32,6 @@ public class UpdateLoyalScoreCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) throws CommandException {
         Router router = new Router();
-        router.setUrl(FIND_CANCELLED_ORDERS_URL);
         BigDecimal amount = BigDecimal.valueOf(Double.parseDouble(request.getParameter(CHANGE_LOYAL_SCORE)));
         HttpSession session = request.getSession();
         User loggedUser = (User) session.getAttribute(USER);
@@ -43,8 +43,10 @@ public class UpdateLoyalScoreCommand implements Command {
             	if (loggedUser.getUserId() == user.getUserId()) {
             		loggedUser.setLoyalScore(amount.add(loggedUser.getLoyalScore()));
             	}
+            	router.setPage(LOYALTY_POINTS_UPDATED_PAGE);
                 router.setRedirect();
             } else {
+                router.setUrl(FIND_CANCELLED_ORDERS_URL);
                 request.setAttribute(INVALID_LOYAL_SCORE_AMOUNT, TRUE);
             }
         } catch (ServiceException | NumberFormatException e) {

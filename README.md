@@ -6,36 +6,39 @@ Cafe. The Client makes an Order for lunch (chooses from the menu) and indicates 
 - changes language
 - registers
 - signs in
-- finds menu by section name
-- sorts menu by section name and price
+- finds menu
+- sorts menu by popularity and price
 
 ### *Client:*
 - adds food dishes to cart
 - deletes food dishes from cart
 - changes language
 - finds menu by section name
-- sorts menu by section name and price
+- sorts menu by popularity and price
 - signs out
 - updates profile
+- changes password
 - creates an order
 - cancels an order
-- view list of all his/her orders
-- view his/her bonuses
-- changes password
+- views list of all his/her orders
+- evaluates an order and gives a feedback
+- views his/her bonuses
+- views his/her loyalty points
 - adds cash to his/her account
 
 ### *Admin:*
 - changes language
 - finds menu by section name
-- sorts menu by section name and price
+- sorts menu by popularity and price
 - signs out
 - updates profile
 - changes password
 - views all orders
 - views cancelled orders
+- decreases loyalty points for cancelled orders
+- changes an order state
 - blocks\unblocks clients
 - manages menu
-- manages orders
 - manages sections
 ***
 ### Project technology stack:

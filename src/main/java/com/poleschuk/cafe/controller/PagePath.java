@@ -8,7 +8,10 @@ public final class PagePath {
 	
     public static final String SIGN_PAGE = "/jsp/pages/sign_in.jsp";
 
-	
+    
+    public static final String SIGNED_OUT_PAGE = "/jsp/pages/signed_out.jsp";
+
+    
     public static final String START_PAGE = "/index.jsp";
 
 	
@@ -56,7 +59,6 @@ public final class PagePath {
 	
     public static final String ORDER_STATE_NOT_CHANGED_PAGE = "/jsp/pages/common/order_state_not_changed.jsp";
     
-    
 	
     public static final String MENU_PAGE = "/jsp/pages/menu.jsp";
     
@@ -72,7 +74,7 @@ public final class PagePath {
 	
     public static final String SECTION_PAGE = "/jsp/pages/admin/section.jsp";
     
-	
+    
     public static final String PASSWORD_PAGE = "/jsp/pages/password.jsp";
     
 	
@@ -96,7 +98,19 @@ public final class PagePath {
 	
     public static final String PRODUCT_UPDATED_PAGE = "/jsp/pages/admin/product_updated.jsp";
 
+    
+    public static final String PRODUCT_REMOVED_PAGE = "/jsp/pages/admin/product_removed.jsp";
+
 	
+    public static final String SECTION_ADDED_PAGE = "/jsp/pages/admin/section_added.jsp";
+
+
+    public static final String SECTION_UPDATED_PAGE = "/jsp/pages/admin/section_updated.jsp";
+    
+    
+    public static final String SECTION_REMOVED_PAGE = "/jsp/pages/admin/section_removed.jsp";
+
+    
     public static final String TOP_UP_BALANCE_PAGE = "/jsp/pages/client/top_up_balance.jsp";
     
 	
@@ -106,6 +120,9 @@ public final class PagePath {
     public static final String CANCELLED_ORDERS_PAGE = "/jsp/pages/admin/cancelled_orders.jsp";
 
 	
+    public static final String LOYALTY_POINTS_UPDATED_PAGE = "/jsp/pages/admin/loyalty_points_updated.jsp";
+
+    
     public static final String LOYAL_SCORE_BONUSES_PAGE = "/jsp/pages/client/loyal_score_bonuses.jsp";
 
 	

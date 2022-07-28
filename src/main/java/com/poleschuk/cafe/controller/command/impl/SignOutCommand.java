@@ -21,7 +21,7 @@ public class SignOutCommand implements Command {
 
     @Override
     public Router execute(HttpServletRequest request) throws CommandException {
-        Router router = new Router(HOME_PAGE, RouterType.REDIRECT);
+        Router router = new Router(SIGNED_OUT_PAGE, RouterType.REDIRECT);
         HttpSession session = request.getSession();
         String language = (String) session.getAttribute(LANGUAGE);
         session.invalidate();

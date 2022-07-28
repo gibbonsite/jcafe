@@ -57,7 +57,7 @@ public class SortAllMenuByPopularityCommand implements Command {
                 }
                 totalRecords = menuService.readRowCount();
                 builderUrl = new StringBuilder(Command.createURL(request, request.getParameter(COMMAND)));
-            }else{
+            } else {
                 long id = Long.parseLong(sectionId);
                 logger.log(Level.INFO, "id = " + id);
                 menuSublist = menuService.findSortedMenuSectionSubListByPopularity(PAGE_SIZE, offset, id);

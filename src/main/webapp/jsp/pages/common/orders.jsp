@@ -161,11 +161,11 @@
 		                                                <fmt:message key="order.change_state"/>
 		                                            </button>
 		                                            <ul class="dropdown-menu">
-		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=PROCESSING&id=${orderItem.order.orderId}">processing</a></li>
-		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=COMPLETED&id=${orderItem.order.orderId}">completed</a></li>
-		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=RECEIVED&id=${orderItem.order.orderId}">received</a></li>
-		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=CANCELLED&id=${orderItem.order.orderId}">cancelled</a></li>
-		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=CANCELLED_FINISHED&id=${orderItem.order.orderId}">cancelled, finished</a></li>
+		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=PROCESSING&id=${orderItem.order.orderId}"><fmt:message key="order.order_state_PROCESSING"/></a></li>
+		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=COMPLETED&id=${orderItem.order.orderId}"><fmt:message key="order.order_state_COMPLETED"/></a></li>
+		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=RECEIVED&id=${orderItem.order.orderId}"><fmt:message key="order.order_state_RECEIVED"/></a></li>
+		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=CANCELLED&id=${orderItem.order.orderId}"><fmt:message key="order.order_state_CANCELLED"/></a></li>
+		                                                <li><a class="dropdown-item" href="${absolutePath}/controller?command=change_order_state&state=CANCELLED_FINISHED&id=${orderItem.order.orderId}"><fmt:message key="order.order_state_CANCELLED_FINISHED"/></a></li>
 		                                            </ul>
 		                                        </div>
 	                                    	</c:when>
@@ -187,11 +187,15 @@
             </c:when>
         </c:choose>
     </div>
+    <c:choose>
+    <c:when test="${sessionScope.user.role eq 'ADMIN'}">
     <div class="pages">
         <div class="justify-content-center" >
                     <ctg:pagination currentPage="${requestScope.currentPage}" lastPage="${requestScope.lastPage}" url="${requestScope.url}"/>
         </div>
     </div>
+    </c:when>
+    </c:choose>
  <div class="text-center">
   <ctg:footertag/>
  </div>

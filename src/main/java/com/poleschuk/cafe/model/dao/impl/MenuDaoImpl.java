@@ -78,7 +78,7 @@ public class MenuDaoImpl extends BaseDao<Menu> implements MenuDao {
             LEFT JOIN (SELECT menu_id, SUM(menu_number) AS all_dish FROM orders_menu
             GROUP BY menu_id) AS food ON food.menu_id = menu.menu_id
             WHERE enabled = true
-            ORDER BY all_dish DESC
+            ORDER BY all_dish DESC NULLS LAST
             LIMIT ? OFFSET ?""";
     private static final String SQL_SELECT_SORTED_SECTION_MENU = """
             SELECT menu_id, name, picture_path, description, weight,
@@ -92,7 +92,7 @@ public class MenuDaoImpl extends BaseDao<Menu> implements MenuDao {
             LEFT JOIN (SELECT menu_id, SUM(menu_number) AS all_dish FROM orders_menu
             GROUP BY menu_id) AS year_food ON year_food.menu_id = menu.menu_id
             WHERE enabled = true AND section_id = ?
-            ORDER BY all_dish DESC
+            ORDER BY all_dish DESC NULLS LAST
             LIMIT ? OFFSET ?""";
     private static final String SQL_SELECT_MENU_ROW_COUNT_BY_SECTION_ID = """
             SELECT COUNT(*) FROM menu WHERE section_id = ? AND enabled = true""";

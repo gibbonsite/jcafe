@@ -22,7 +22,7 @@ import java.util.Optional;
 
 import static com.poleschuk.cafe.controller.Parameter.*;
 
-import static com.poleschuk.cafe.controller.PagePath.ERROR_500_PAGE;
+import static com.poleschuk.cafe.controller.PagePath.*;
 
 import static java.lang.Boolean.TRUE;
 
@@ -66,6 +66,7 @@ public class UpdateSectionNameCommand implements Command {
                 return router;
             }
             Optional<Section> oldSection = service.updateSectionName(new Section(sectionId, sectionName, true));
+            router.setPage(SECTION_UPDATED_PAGE);
             router.setRedirect();
             if (oldSection.isPresent()) {
                 List<Section> sectionList = service.findAllSections();

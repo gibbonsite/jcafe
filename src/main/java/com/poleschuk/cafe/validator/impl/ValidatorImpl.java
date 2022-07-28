@@ -276,11 +276,11 @@ public class ValidatorImpl implements Validator {
         String birthday = updateData.get(USER_BIRTHDAY);
 
         if (!isCorrectName(firstName)) {
-            updateData.put(USER_FIRST_NAME,INVALID_FIRST_NAME);
+            updateData.put(USER_FIRST_NAME, INVALID_FIRST_NAME);
             result = false;
         }
         if (!isCorrectName(lastName)) {
-            updateData.put(USER_LAST_NAME,INVALID_LAST_NAME);
+            updateData.put(USER_LAST_NAME, INVALID_LAST_NAME);
             result = false;
         }
         if (!isCorrectEmail(email)) {
@@ -288,11 +288,11 @@ public class ValidatorImpl implements Validator {
             result = false;
         }
         if (!isCorrectPhoneNumber(phone)) {
-            updateData.put(USER_PHONE_NUMBER,INVALID_PHONE_NUMBER);
+            updateData.put(USER_PHONE_NUMBER, INVALID_PHONE_NUMBER);
             result = false;
         }
         if (!isCorrectDate(birthday)) {
-            updateData.put(USER_BIRTHDAY,INVALID_BIRTHDAY);
+            updateData.put(USER_BIRTHDAY, INVALID_BIRTHDAY);
             result = false;
         }
         return result;

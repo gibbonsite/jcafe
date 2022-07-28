@@ -64,7 +64,7 @@
                             <td><c:out value="${user.login}"/></td>
                             <td><c:out value="${user.email}"/></td>
                             <td><c:out value="${user.phoneNumber}"/></td>
-                            <td><c:out value="${user.state}"/></td>
+                            <td><fmt:message key="admin.user_state_${user.state}"/></td>
                             <td>
                                 <div class="row">
                                     <c:choose>
