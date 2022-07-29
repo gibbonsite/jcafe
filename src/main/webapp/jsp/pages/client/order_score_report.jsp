@@ -54,7 +54,9 @@
                     <fmt:message key="order.score_report.score"/>
                 </dt>
                 <div class="form-group col-10 mb-3">
-	                <input type="range" class="form-range" id="score" name="order_score" min="0" max="10" step="1" style="border-width:0px;" value="${!empty order_score ? order_score : '9'}">
+	                <input type="range" class="form-range" id="score" name="order_score" min="0" max="10" step="1" style="border-width:0px;" value="${!empty order_score ? order_score : '9'}"
+	                		oninput="document.getElementById('score_value').value = this.value" />
+                    <input type="text" class="form-control" id="score_value" readonly="readonly" value="${!empty order_score ? order_score : '9'}" />
                 </div>
                 <dt class="col-2 mb-3">
                     <fmt:message key="order.score_report.report"/>

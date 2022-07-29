@@ -1,23 +1,12 @@
 package com.poleschuk.cafe.service.impl;
 
-import com.poleschuk.cafe.exception.DaoException;
-import com.poleschuk.cafe.exception.ServiceException;
-import com.poleschuk.cafe.model.dao.EntityTransaction;
-import com.poleschuk.cafe.model.dao.impl.MenuDaoImpl;
-import com.poleschuk.cafe.model.dao.impl.OrderDaoImpl;
-import com.poleschuk.cafe.model.dao.impl.UserDaoImpl;
-import com.poleschuk.cafe.model.entity.*;
-import com.poleschuk.cafe.service.BonusService;
-import com.poleschuk.cafe.service.OrderService;
-import com.poleschuk.cafe.util.mail.Mail;
-import com.poleschuk.cafe.validator.Validator;
-import com.poleschuk.cafe.validator.impl.ValidatorImpl;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import static com.poleschuk.cafe.controller.Parameter.ADDRESS;
+import static com.poleschuk.cafe.controller.Parameter.ORDER_DATE;
+import static com.poleschuk.cafe.controller.Parameter.ORDER_DISCOUNT;
+import static com.poleschuk.cafe.controller.Parameter.PRODUCT_PAYMENT;
+import static com.poleschuk.cafe.controller.Parameter.USER_COMMENT;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -25,7 +14,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.poleschuk.cafe.controller.Parameter.*;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.poleschuk.cafe.exception.DaoException;
+import com.poleschuk.cafe.exception.ServiceException;
+import com.poleschuk.cafe.model.dao.EntityTransaction;
+import com.poleschuk.cafe.model.dao.impl.MenuDaoImpl;
+import com.poleschuk.cafe.model.dao.impl.OrderDaoImpl;
+import com.poleschuk.cafe.model.dao.impl.UserDaoImpl;
+import com.poleschuk.cafe.model.entity.CompleteOrder;
+import com.poleschuk.cafe.model.entity.Menu;
+import com.poleschuk.cafe.model.entity.Order;
+import com.poleschuk.cafe.model.entity.OrderComponent;
+import com.poleschuk.cafe.model.entity.OrderDiscount;
+import com.poleschuk.cafe.model.entity.OrderScoreReport;
+import com.poleschuk.cafe.model.entity.OrderState;
+import com.poleschuk.cafe.model.entity.PaymentType;
+import com.poleschuk.cafe.model.entity.User;
+import com.poleschuk.cafe.model.entity.UserRole;
+import com.poleschuk.cafe.model.entity.UserState;
+import com.poleschuk.cafe.service.BonusService;
+import com.poleschuk.cafe.service.OrderService;
+import com.poleschuk.cafe.util.mail.Mail;
+import com.poleschuk.cafe.validator.Validator;
+import com.poleschuk.cafe.validator.impl.ValidatorImpl;
 
 /**
  * OrderServiceImpl class implements OrderService interface and contains
