@@ -120,6 +120,15 @@ public interface Validator {
      */
     boolean isCorrectUserComment(String comment);
 
+
+    /**
+     * Check order state.
+     *
+     * @param state the state
+     * @return true, if successful
+     */
+    boolean checkOrderState(String state);
+    
     /**
      * Check order information.
      *

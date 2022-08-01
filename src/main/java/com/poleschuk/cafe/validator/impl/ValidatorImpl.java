@@ -6,6 +6,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Map;
 
 import com.poleschuk.cafe.model.entity.OrderDiscount;
+import com.poleschuk.cafe.model.entity.OrderState;
 import com.poleschuk.cafe.model.entity.PaymentType;
 import com.poleschuk.cafe.validator.Validator;
 
@@ -121,6 +122,15 @@ public class ValidatorImpl implements Validator {
         return isNotNullOrEmpty(sectionName) && sectionName.matches(SECTION_NAME_PATTERN);
     }
 
+    @Override
+    public boolean checkOrderState(String state) {
+        try {
+        	OrderState.valueOf(state);
+        } catch (IllegalArgumentException | NullPointerException e) {
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public boolean checkRegistration(Map<String, String> map) {

@@ -227,13 +227,17 @@ public class OrderServiceImpl implements OrderService {
         transaction.initTransaction(orderDao, userDao, menuDao);
         boolean result = true;
         Optional<User> optionalUser = Optional.empty();
-        try{
+        Validator validator = ValidatorImpl.getInstance();
+        if (!validator.checkOrderState(state)) {
+        	return Optional.empty();
+        }
+        OrderState orderState = OrderState.valueOf(state);
+        try {
         	Optional<User> user = userDao.findEntityById(userId);
         	Optional<Order> optionalOrder = orderDao.findEntityById(orderId);
         	if (user.isPresent() && optionalOrder.isPresent() && (user.get().getRole() == UserRole.ADMIN || 
         			user.get().getRole() == UserRole.CLIENT && optionalOrder.get().getUserId() == userId)) {
                 BigDecimal earnedLoyalScore = BigDecimal.ZERO;
-                OrderState orderState = OrderState.valueOf(state);
                 switch (orderState) {
                 case CANCELLED -> {
     				Order order = optionalOrder.get();
@@ -296,7 +300,7 @@ public class OrderServiceImpl implements OrderService {
         	} else {
         		transaction.rollback();
         	}
-        } catch (DaoException | IllegalArgumentException | NullPointerException e) {
+        } catch (DaoException e) {
             transaction.rollback();
             throw new ServiceException("Exception in a changeOrderStateById method. ", e);
         } finally {
