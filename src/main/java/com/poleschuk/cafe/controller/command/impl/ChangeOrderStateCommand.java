@@ -1,4 +1,4 @@
-package com.poleschuk.cafe.controller.command.impl.admin;
+package com.poleschuk.cafe.controller.command.impl;
 
 
 import com.poleschuk.cafe.controller.Router;

@@ -1,6 +1,7 @@
 package com.poleschuk.cafe.controller.command;
 
 import com.poleschuk.cafe.controller.command.impl.ChangeLanguageCommand;
+import com.poleschuk.cafe.controller.command.impl.ChangeOrderStateCommand;
 import com.poleschuk.cafe.controller.command.impl.ChangePasswordCommand;
 import com.poleschuk.cafe.controller.command.impl.DefaultCommand;
 import com.poleschuk.cafe.controller.command.impl.FindAllMenuBySectionCommand;
@@ -13,7 +14,6 @@ import com.poleschuk.cafe.controller.command.impl.SortAllMenuByPopularityCommand
 import com.poleschuk.cafe.controller.command.impl.SortAllMenuByPriceCommand;
 import com.poleschuk.cafe.controller.command.impl.UpdateUserProfileCommand;
 import com.poleschuk.cafe.controller.command.impl.admin.BlockUserByIdCommand;
-import com.poleschuk.cafe.controller.command.impl.admin.ChangeOrderStateCommand;
 import com.poleschuk.cafe.controller.command.impl.admin.DeleteAdminCommand;
 import com.poleschuk.cafe.controller.command.impl.admin.DeleteOrdersCommand;
 import com.poleschuk.cafe.controller.command.impl.admin.DeleteProductCommand;
