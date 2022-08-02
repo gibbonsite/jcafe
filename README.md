@@ -7,14 +7,12 @@ Cafe. The Client makes an Order for lunch (chooses from the menu) and indicates 
 - registers
 - signs in
 - finds menu
-- sorts menu by popularity and price
 
 ### *Client:*
 - adds food dishes to cart
 - deletes food dishes from cart
 - changes language
 - finds menu by section name
-- sorts menu by popularity and price
 - signs out
 - updates profile
 - changes password
@@ -29,7 +27,6 @@ Cafe. The Client makes an Order for lunch (chooses from the menu) and indicates 
 ### *Admin:*
 - changes language
 - finds menu by section name
-- sorts menu by popularity and price
 - signs out
 - updates profile
 - changes password
