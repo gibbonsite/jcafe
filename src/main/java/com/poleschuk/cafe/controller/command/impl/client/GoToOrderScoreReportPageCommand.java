@@ -23,6 +23,10 @@ import com.poleschuk.cafe.service.impl.OrderServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+/**
+ * GoToOrderScoreReportPageCommand class implements Command interface and 
+ * handles command of the web application. 
+ */
 public class GoToOrderScoreReportPageCommand implements Command {
 
     private static final Logger logger = LogManager.getLogger();

@@ -12,6 +12,10 @@ import com.poleschuk.cafe.model.entity.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+/**
+ * GoToAccumulativeDiscountPageCommand class implements Command interface and 
+ * handles command of the web application. 
+ */
 public class GoToAccumulativeDiscountPageCommand implements Command {
 
     @Override
